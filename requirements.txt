@@ -1,0 +1,13 @@
+# Framework bases
+django==5.0.2
+djangorestframework==3.14.0
+
+# DRF Dependencis
+django-filter==23.5
+markdown==3.5.2
+pytz==2024.1
+
+# JWT
+djangorestframework-simplejwt==5.3.1
+djangorestframework-simplejwt[crypto]
+
