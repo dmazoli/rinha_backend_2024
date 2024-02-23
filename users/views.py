@@ -27,6 +27,6 @@ class UserViewSet(viewsets.GenericViewSet):
     @action(methods=['get'], detail=True, url_path='extrato')
     def statement(self, request, *args, **kwargs):
         user = self.get_object()
-        serializer = TransactionSerializer(user, data=request.query_params)
+        serializer = UserTransactionsSerializer(user, data=request.query_params)
         serializer.is_valid(raise_exception=True)
-        return Response(serializer.data)
+        return Response(serializer.validated_data)
