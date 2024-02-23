@@ -38,7 +38,7 @@ class User(AbstractUser, BaseModel):
                 raise UnprocessableEntity('Valor inconsistente')
 
             # Limite é positivo, mas significa que o saldo, quando debitado da conta não pode execede o limite
-            if new_balance < (self.limit * -1):
+            if abs(new_balance) > self.limit:
                 raise UnprocessableEntity('Limite excedido')
 
             self.balance = new_balance
